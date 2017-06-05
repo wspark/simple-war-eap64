@@ -86,7 +86,7 @@
                 <formatter>
                     <named-formatter name="PATTERN"/>
                 </formatter>
-                <file relative-to="jboss.server.log.dir" path="server.log"/>
+                <file relative-to="jboss.server.log.dir" path="${HOSTNAME}-server.log"/>
                 <suffix value=".yyyy-MM-dd"/>
                 <append value="true"/>
             </periodic-rotating-file-handler>
@@ -506,7 +506,11 @@
         <subsystem xmlns="urn:jboss:domain:web:2.2" default-virtual-server="default-host" native="true">
             <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
             <!-- No HTTPS configuration discovered -->
-            <virtual-server name="default-host" enable-welcome-root="false"/>
+            <virtual-server name="default-host" enable-welcome-root="false">
+                <access-log pattern="%a %t %H %p %U %s %S %T" prefix="${HOSTNAME}_access_log.">
+                    <directory path="."/>
+                </access-log>
+            </virtual-server>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:webservices:1.2">
             <modify-wsdl-address>true</modify-wsdl-address>
