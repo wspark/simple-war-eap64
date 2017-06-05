@@ -100,7 +100,7 @@
                 <overflow-action value="block"/>
                 <subhandlers>
                     <handler name="CONSOLE"/>
-                    <handler name="SERVER_LOG"/>
+                    <handler name="FILE"/>
                 </subhandlers>
             </async-handler>
             <logger category="com.arjuna">
