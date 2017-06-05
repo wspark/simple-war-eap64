@@ -28,6 +28,10 @@
         <extension module="org.jboss.as.weld"/>
         <!-- ##KEYCLOAK_EXTENSION## -->
     </extensions>
+    <system-properties>
+        <property name="file.encoding" value="UTF-8"/>
+        <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
+    </system-properties>
     <management>
         <security-realms>
             <security-realm name="ManagementRealm">
