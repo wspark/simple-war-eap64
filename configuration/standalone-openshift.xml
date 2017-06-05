@@ -82,7 +82,7 @@
     </management>
     <profile>
         <subsystem xmlns="urn:jboss:domain:logging:1.5">
-            <periodic-rotating-file-handler name="FILE" autoflush="true">
+            <periodic-rotating-file-handler name="SERVER_LOG" autoflush="true">
                 <formatter>
                     <named-formatter name="PATTERN"/>
                 </formatter>
@@ -100,7 +100,7 @@
                 <overflow-action value="block"/>
                 <subhandlers>
                     <handler name="CONSOLE"/>
-                    <handler name="FILE"/>
+                    <handler name="SERVER_LOG"/>
                 </subhandlers>
             </async-handler>
             <logger category="com.arjuna">
