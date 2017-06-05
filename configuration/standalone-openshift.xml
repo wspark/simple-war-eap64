@@ -82,6 +82,14 @@
     </management>
     <profile>
         <subsystem xmlns="urn:jboss:domain:logging:1.5">
+            <periodic-rotating-file-handler name="FILE" autoflush="true">
+                <formatter>
+                    <named-formatter name="PATTERN"/>
+                </formatter>
+                <file relative-to="jboss.server.log.dir" path="server.log"/>
+                <suffix value=".yyyy-MM-dd"/>
+                <append value="true"/>
+            </periodic-rotating-file-handler>
             <console-handler name="CONSOLE">
                 <formatter>
                     <named-formatter name="COLOR-PATTERN"/>
@@ -92,6 +100,7 @@
                 <overflow-action value="block"/>
                 <subhandlers>
                     <handler name="CONSOLE"/>
+                    <handler name="FILE"/>
                 </subhandlers>
             </async-handler>
             <logger category="com.arjuna">
