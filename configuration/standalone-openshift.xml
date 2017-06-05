@@ -507,7 +507,7 @@
             <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
             <!-- No HTTPS configuration discovered -->
             <virtual-server name="default-host" enable-welcome-root="false">
-                <access-log pattern="%a %t %H %p %U %s %S %T" prefix="${HOSTNAME}_access_log.">
+                <access-log pattern="%a %t %H %p %U %s %S %T" prefix="${HOSTNAME}-access_log.">
                     <directory path="."/>
                 </access-log>
             </virtual-server>
