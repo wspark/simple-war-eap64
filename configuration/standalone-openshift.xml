@@ -82,7 +82,7 @@
     </management>
     <profile>
         <subsystem xmlns="urn:jboss:domain:logging:1.5">
-            <periodic-rotating-file-handler name="SERVER_LOG" autoflush="true">
+            <periodic-rotating-file-handler name="FILE" autoflush="true">
                 <formatter>
                     <named-formatter name="PATTERN"/>
                 </formatter>
@@ -127,7 +127,7 @@
             <root-logger>
                 <level name="INFO"/>
                 <handlers>
-                    <handler name="SERVER_LOG"/>
+                    <handler name="FILE"/>
                     <handler name="CONSOLE"/>
                 </handlers>
             </root-logger>
