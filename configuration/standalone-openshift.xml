@@ -508,7 +508,7 @@
             <!-- No HTTPS configuration discovered -->
             <virtual-server name="default-host" enable-welcome-root="false">
                 <access-log pattern="%a %t %H %p %U %s %S %T" prefix="access_log.">
-                    <directory path="./${HOSTNAME}-access_log"/>
+                    <directory path="./${HOSTNAME}/access_log"/>
                 </access-log>
             </virtual-server>
         </subsystem>
