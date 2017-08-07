@@ -86,7 +86,7 @@
                 <formatter>
                     <named-formatter name="PATTERN"/>
                 </formatter>
-                <file relative-to="jboss.server.log.dir" path="${ocp.pod.hostname}/server.log"/>
+                <file relative-to="jboss.server.log.dir" path="${env.HOSTNAME}/server.log"/>
                 <suffix value=".yyyy-MM-dd"/>
                 <append value="true"/>
             </periodic-rotating-file-handler>
@@ -508,7 +508,7 @@
             <!-- No HTTPS configuration discovered -->
             <virtual-server name="default-host" enable-welcome-root="false">
                 <access-log pattern="%a %t %H %p %U %s %S %T" prefix="access_log.">
-                    <directory path="./${ocp.pod.hostname}"/>
+                    <directory path="./${env.HOSTNAME}"/>
                 </access-log>
             </virtual-server>
         </subsystem>
